@@ -1,4 +1,5 @@
 # chat-space
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
