@@ -1,4 +1,4 @@
-# chat-space
+# chat-space DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -22,7 +22,7 @@
 |------|----|-------|
 |groupname|string|null: false|
 ### Association
--has_many :users, throught: :users_groups
+-has_many :users, through: :users_groups
 -has_many :posts
 
 ## postsテーブル
