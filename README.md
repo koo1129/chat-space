@@ -5,7 +5,7 @@
 |name|string|null: false, index: ture|
 |email|string|null: false|
 ### Association
--has_many :user_group
+-has_many :users_groups
 -has_many :groups, through:  :users_groups
 -has_may :posts
 
@@ -23,7 +23,7 @@
 |------|----|-------|
 |name|string|null: false|
 ### Association
--has_many :user_group
+-has_many :users_groups
 -has_many :users, through: :users_groups
 -has_many :posts
 
