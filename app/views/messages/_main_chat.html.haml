@@ -1,0 +1,30 @@
+.chat-main
+    .main-header 
+        .main-header-box
+            .groupname test
+            .menber Menber:kou
+        .edit-box
+            =link_to "#",class:"edit" do
+                %p.edit 
+                Edit
+    .messages
+        .message
+            .message-box
+                %p.message-box-name こう
+                %p.message-box-date 2002/2/6(Mon) 20:11:11
+            %p.messsage-text 頑張ろう！！！！
+        .message
+            .message-box
+                %p.message-box-name こう
+                %p.message-box-date 2002/2/6(Mon) 20:20:20
+            %p.messsage-text ありがとう！！！！
+    .form
+        %form.new-message
+            .input-box
+                %input{type: "text", class: "input-box__text",placeholder: "type a message"}
+                %label{class: "input-box__image"}
+                    = icon('fas', 'image')
+                    %input{type: "file", class: "input-box__image__file"}
+            %input{type: "submit", class: "submit-btn"}
+
+
