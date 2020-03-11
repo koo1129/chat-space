@@ -5,18 +5,19 @@
                 = current_user.name
             %ul.icon 
                 %li.icon1 
-                    = link_to "#" do
+                    = link_to new_group_path  do
                         = icon('fas' ,'edit')
                 %li.icon2
-                    = link_to edit_user_path(current_user) do
+                    = link_to edit_user_path(current_user.id) do
                         = icon('fas' ,'cog')
     .groups 
-        .group
-            =link_to "#", class:"group" do
-                %p.group-group-name
-                test
-                %P.group-group-name
-                まだメッセージはありません
+        -current_user.groups.each do |group|
+            .group
+                =link_to "#", class:"group" do
+                    .group__name
+                    = group.name
+                    .group__message
+                    まだメッセージはありません
       
             
     
