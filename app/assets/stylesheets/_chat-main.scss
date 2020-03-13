@@ -52,11 +52,17 @@
                     font-size: 12px;
                 }
             }
-            .messsage-text{
+            .message-text{
                 color: #434A54;
                 font-size: 14px;
                 margin-top: 12px;
                 padding-bottom: 40px;
+                %p.mesage--content{
+                    color: #434A54;
+                font-size: 14px;
+                margin-top: 12px;
+                padding-bottom: 40px;
+                }
             }
         }
     }

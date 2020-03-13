@@ -2,40 +2,41 @@ $(function(){
     function buildHTML(message){
      if ( message.image ) {
        var html =
-        `<div class="message" data-message-id=${message.id}>
-           <div class="upper-message">
-             <div class="upper-message__user-name">
-               ${message.user_name}
-             </div>
-             <div class="upper-message__date">
-               ${message.date}
-             </div>
-           </div>
-           <div class="lower-message">
-             <p class="lower-message__content">
-               ${message.content}
-             </p>
-           </div>
-           <img src=${message.image} >
-         </div>`
+       `<div class="message">
+       <div class="message-box">
+         <div class="message-box-name">
+            ${message.user_name}
+         </div>
+         <div class="message-box-date">
+           ${message.created_at}
+         </div>
+       </div>
+       <div class="message-text">
+         <p class="message--content">
+            ${message.content}
+         </p>
+         <img src="${message.image}" >
+       </div>
+     </div>`
+         
        return html;
      } else {
        var html =
-        `<div class="message" data-message-id=${message.id}>
-           <div class="upper-message">
-             <div class="upper-message__user-name">
-               ${message.user_name}
-             </div>
-             <div class="upper-message__date">
-               ${message.date}
-             </div>
-           </div>
-           <div class="lower-message">
-             <p class="lower-message__content">
-               ${message.content}
-             </p>
-           </div>
-         </div>`
+       `<div class="message">
+          <div class="message-box">
+            <div class="message-box-name">
+            ${message.user_name}
+            </div>
+          <div class="message-box-date">
+          ${message.created_at}
+         </div>
+        </div>
+        <div class="message-text">
+          <p class="message--content">
+          ${message.content}
+          </p>
+         </div>
+        </div>`
        return html;
      };
    }
@@ -51,7 +52,7 @@ $('#new_message').on('submit', function(e){
      processData: false,
      contentType: false
    })
-    .done(function(data){
+    .always(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);      
       $('form')[0].reset();
