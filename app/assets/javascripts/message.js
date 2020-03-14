@@ -52,12 +52,13 @@ $('#new_message').on('submit', function(e){
      processData: false,
      contentType: false
    })
-    .always(function(data){
+    .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);      
       $('form')[0].reset();
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-      $('.text-message').val('')
+    })
+      .always(function(){
       $('.form__submit').attr('disabled', false);
     })
     .fail(function() {
