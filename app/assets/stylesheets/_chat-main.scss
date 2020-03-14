@@ -38,6 +38,7 @@
         background-color: #fafafa;
         height: calc(100vh - 190px);
         padding: 46px 40px;
+        overflow: scroll;
         .message{
             padding-bottom: 40px;
             .message-box{
@@ -51,11 +52,17 @@
                     font-size: 12px;
                 }
             }
-            .messsage-text{
+            .message-text{
                 color: #434A54;
                 font-size: 14px;
                 margin-top: 12px;
                 padding-bottom: 40px;
+                %p.mesage--content{
+                    color: #434A54;
+                font-size: 14px;
+                margin-top: 12px;
+                padding-bottom: 40px;
+                }
             }
         }
     }
